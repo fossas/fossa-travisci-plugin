@@ -15,6 +15,17 @@ var scan_endpoint
 var request_headers
 
 
+function getResource (url) {
+	return request.getAsync({
+		url: url,
+		method: 'GET',
+		headers: request_headers
+	})
+	.then(function (response) {
+		return JSON.parse(response.body)
+	})
+}
+
 function setup () {
 	if (!process.env['FOSSA_API_TOKEN']) {
 		console.error('Environment variable \'FOSSA_API_TOKEN\' not found')
