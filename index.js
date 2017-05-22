@@ -32,7 +32,7 @@ function setup () {
 		process.exit(1)
 	}
 
-	api_base_url = process.env['FOSSA_ENDPOINT_URL'] || 'http://app.fossa.io'
+	api_base_url = process.env['FOSSA_ENDPOINT_URL'] || 'https://app.fossa.io'
 	// Get project information from TravisCI Environment variables
 	fossa_project_id = 'git+https://github.com/' + process.env['TRAVIS_REPO_SLUG']
 	full_fossa_locator = fossa_project_id + '$' + process.env['TRAVIS_COMMIT']
